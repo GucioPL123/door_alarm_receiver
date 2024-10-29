@@ -13,6 +13,15 @@ radio.onReceivedNumber(function (receivedNumber) {
 input.onButtonPressed(Button.A, function () {
     ALARM = false
 })
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    if (ALARM == false) {
+        basic.showIcon(IconNames.No)
+    } else if (ALARM == true) {
+        basic.showIcon(IconNames.Yes)
+    }
+    basic.pause(5000)
+    basic.clearScreen()
+})
 input.onButtonPressed(Button.B, function () {
     ALARM = true
 })
